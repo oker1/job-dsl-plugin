@@ -27,6 +27,7 @@ public class Job {
     @Delegate StepContextHelper helperStep
     @Delegate PublisherContextHelper helperPublisher
     @Delegate MultiScmContextHelper helperMultiscm
+    @Delegate PropertiesContextHelper helperContext
     @Delegate TopLevelHelper helperTopLevel
     @Delegate MavenHelper helperMaven
 
@@ -39,6 +40,7 @@ public class Job {
         helperTrigger = new TriggerContextHelper(withXmlActions, arguments)
         helperStep = new StepContextHelper(withXmlActions, arguments)
         helperPublisher = new PublisherContextHelper(withXmlActions)
+        helperContext = new PropertiesContextHelper(withXmlActions)
         helperTopLevel = new TopLevelHelper(withXmlActions)
         helperMaven = new MavenHelper(withXmlActions, arguments)
     }
